@@ -40,14 +40,14 @@ export default class KyrnePage extends Page {
                                 </div>
                                   : ''}
                                 <div class="grid-2">
-                                  <a href={extension.extra['flarum-extension'].info.link}>
+                                  <a target="_blank" href={extension.extra['flarum-extension'].info.link}>
                                     <button class="color-c circle"> {icon('fas fa-info-circle')}</button>
                                     <h2 class="title">Info</h2>
                                     <p class="location">{extension.extra['flarum-extension'].info.location}</p>
                                   </a>
                                 </div>
                                 <div class="grid-2">
-                                  <a href={extension.extra['flarum-extension'].extra.link}>
+                                  <a target="_blank" href={extension.extra['flarum-extension'].extra.link}>
                                     <button class="color-d circle">{icon(extension.extra['flarum-extension'].extra.icon)}</button>
                                     <h2 class="title">{extension.extra['flarum-extension'].extra.title}</h2>
                                     <p class="location">{extension.extra['flarum-extension'].extra.location}</p>
