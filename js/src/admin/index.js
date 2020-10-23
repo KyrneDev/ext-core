@@ -10,7 +10,7 @@ import AddExtensionModal from 'flarum/components/AddExtensionModal';
 import KyrnePage from './components/KyrnePage';
 
 app.initializers.add('kyrne-everygreen', () => {
-  app.routes['kyrne'] = { path: '/kyrne', component: KyrnePage.component() };
+  app.routes['kyrne'] = { path: '/kyrne', component: KyrnePage };
 
   extend(AdminNav.prototype, 'items', (items) => {
     items.add(
@@ -18,9 +18,8 @@ app.initializers.add('kyrne-everygreen', () => {
       AdminLinkButton.component({
         href: app.route('kyrne'),
         icon: 'fas fa-space-shuttle',
-        children: "Kyrne's Extensions",
         description: "The home for all of Kyrne's extensions",
-      })
+      }, "Kyrne's Extensions")
     );
   });
 
@@ -30,11 +29,10 @@ app.initializers.add('kyrne-everygreen', () => {
         <div className="ExtensionsPage-header">
           <div className="container">
             {Button.component({
-              children: app.translator.trans('core.admin.extensions.add_button'),
               icon: 'fas fa-plus',
               className: 'Button Button--primary',
               onclick: () => app.modal.show(AddExtensionModal),
-            })}
+            }, app.translator.trans('core.admin.extensions.add_button'))}
           </div>
         </div>
 

@@ -81,13 +81,13 @@ export default class KyrnePage extends Page {
       .request({
         url: app.forum.attribute('apiUrl') + '/extensions/' + id,
         method: 'PATCH',
-        data: { enabled: !enabled },
+        body: { enabled: !enabled },
       })
       .then(() => {
         if (!enabled) localStorage.setItem('enabledExtension', id);
         window.location.reload();
       });
 
-    app.modal.show(new LoadingModal());
+    app.modal.show(LoadingModal);
   }
 }
